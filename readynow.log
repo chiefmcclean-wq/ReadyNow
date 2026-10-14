@@ -1,0 +1,12 @@
+[2026-10-14 07:37:55] [USER]    (Agent: root_agent | Session: unit_test_session_999 | Priority: URGENT) -> Test user inquiry
+[2026-10-14 07:37:55] [MODEL]   (Agent: weather_agent | Session: unit_test_session_999) -> Test model response
+[2026-10-14 07:37:55] [TOOL]    (Agent: routes_agent | Session: unit_test_session_999) Invoked 'get_evacuation_route' with {'origin': 'A', 'destination': 'B'}
+[2026-10-14 07:38:22] [USER]    (Agent: root_agent | Session: unit_test_session_999 | Priority: URGENT) -> Test user inquiry
+[2026-10-14 07:38:22] [MODEL]   (Agent: weather_agent | Session: unit_test_session_999) -> Test model response
+[2026-10-14 07:38:22] [TOOL]    (Agent: routes_agent | Session: unit_test_session_999) Invoked 'get_evacuation_route' with {'origin': 'A', 'destination': 'B'}
+[2026-10-14 07:40:02] [USER]    (Agent: direct_demo | Session: direct_demo_session | Priority: STANDARD) -> weather Tampa, FL
+[2026-10-14 07:40:04] [USER]    (Agent: direct_demo | Session: direct_demo_session | Priority: STANDARD) -> route Tampa, FL to Orlando, FL
+[2026-10-14 07:40:04] [USER]    (Agent: direct_demo | Session: direct_demo_session | Priority: STANDARD) -> shelters Miami, FL
+[2026-10-14 07:40:05] [USER]    (Agent: direct_demo | Session: direct_demo_session | Priority: URGENT) -> checklist wildfire
+[2026-10-14 07:40:05] [USER]    (Agent: direct_demo | Session: direct_demo_session | Priority: STANDARD) -> contacts
+[2026-10-14 08:27:02] [USER]    (Agent: root_agent | Session: session_unknown | Priority: URGENT) -> What is ReadyNow and what can you help me with during a hurricane?
