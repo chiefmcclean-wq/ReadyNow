@@ -91,7 +91,7 @@ def load_remote_agent():
 async def cmd_query(agent, query_text: str, user_id: str = DEFAULT_USER) -> None:
     """Creates a fresh remote session and streams the multi-agent response."""
     import uuid
-    session_id = f"session_{uuid.uuid4().hex[:8]}"
+    session_id = f"session-{uuid.uuid4().hex[:8]}"
 
     _header(f"Querying ReadyNow on Vertex AI Agent Engine ({session_id})")
     _info(f"User: {user_id} | Emergency Inquiry: {query_text}")
@@ -121,7 +121,10 @@ async def cmd_list_sessions(agent, user_id: str = DEFAULT_USER) -> None:
         _info("No active sessions found.")
         return
     for s in sessions:
-        print(f"  • Session ID: {s.get('id')} (Created: {s.get('create_time', 'N/A')})")
+        if isinstance(s, dict):
+            print(f"  • Session ID: {s.get('id')} (Created: {s.get('create_time', 'N/A')})")
+        else:
+            print(f"  • Session ID: {s}")
 
 
 def main() -> None:

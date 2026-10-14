@@ -10,3 +10,55 @@
 [2026-10-14 07:40:05] [USER]    (Agent: direct_demo | Session: direct_demo_session | Priority: URGENT) -> checklist wildfire
 [2026-10-14 07:40:05] [USER]    (Agent: direct_demo | Session: direct_demo_session | Priority: STANDARD) -> contacts
 [2026-10-14 08:27:02] [USER]    (Agent: root_agent | Session: session_unknown | Priority: URGENT) -> What is ReadyNow and what can you help me with during a hurricane?
+[2026-10-14 09:38:01] [USER]    (Agent: root_agent | Session: session_unknown | Priority: URGENT) -> What is ReadyNow and what can you help me with during a hurricane?
+[2026-10-14 09:38:59] [USER]    (Agent: root_agent | Session: session_unknown | Priority: URGENT) -> What is ReadyNow and what can you help me with during a hurricane?
+[2026-10-14 09:39:03] [MODEL]   (Agent: root_agent | Session: session_unknown) -> ReadyNow is a disaster response and safety coordination system. I can help you by providing real-time updates and information during a disaster.
+
+Here's what I can do:
+- 🌤️ Weather Forecasting & Hazard Alerts: Get real-time storm tracks, temperatures, winds, and National Weather Service warnings.
+- 🌐 Internet Search: Find breaking emergency declarations, official mandates, and road closures.
+- 🗺️ Evacuation Routes: Get turn-by-turn driving routes, estimated congestion travel times, and find nearby emergency shelters.
+- 🛡️ Disaster Safety & Survival: Access authoritative checklists for various disasters, survival procedures, and first aid information, along with emergency hotlines.
+- 🔄 Sequential Validation & Refinement: For complex requests, I use a multi-agent pipeline to verify accuracy before delivering information.
+
+During a hurricane, I can specifically help you by:
+- Providing real-time weather updates, storm tracks, and severe weather warnings (via `weather_agent`).
+- Searching for official hurricane-related announcements, evacuation orders, and road closures (via `search_agent`).
+- Helping you find evacuation routes, estimate travel times, and locate emergency shelters (via `routes_agent`).
+- Offering disaster preparedness checklists for hurricanes, survival tips, and first aid information (via `safety_agent`).
+[2026-10-14 09:39:46] [USER]    (Agent: root_agent | Session: session_unknown | Priority: URGENT) -> What is ReadyNow and what can you help me with during a hurricane?
+[2026-10-14 09:39:52] [MODEL]   (Agent: root_agent | Session: session_unknown) -> ReadyNow is a Disaster Response & Safety Coordinator. I can help you get real-time updates during a disaster.
+
+During a hurricane, I can help you with:
+*   **🌤️ Weather Forecasting & Hazard Alerts:** Provide real-time storm tracks, temperatures, winds, and National Weather Service warnings specific to the hurricane.
+*   **🌐 Internet Search:** Find breaking emergency declarations, official mandates, and road closures related to the hurricane.
+*   **🗺️ Evacuation Routes:** Calculate turn-by-turn driving routes, estimated congestion travel times, and locate the nearest emergency shelters.
+*   **🛡️ Disaster Safety & Survival:** Offer authoritative checklists for hurricanes, survival procedures, and first aid tips.
+*   **🔄 Sequential Validation & Refinement:** For complex requests, I can use a rigorous multi-agent pipeline to ensure the accuracy of life-safety information before delivering it to you.
+[2026-10-14 09:41:28] [USER]    (Agent: root_agent | Session: session_unknown | Priority: URGENT) -> What is ReadyNow and what can you help me with during a hurricane?
+[2026-10-14 09:41:35] [MODEL]   (Agent: root_agent | Session: session_unknown) -> ReadyNow is a disaster response and safety coordination system. I can help you by providing real-time updates and guidance during a disaster, including during a hurricane.
+
+Here's how I can assist you:
+
+*   **🌤️ Weather Forecasting & Hazard Alerts:** I can provide real-time storm tracks, temperatures, winds, and National Weather Service (NWS) warnings related to the hurricane.
+*   **🌐 Internet Search:** I can find breaking emergency declarations, official mandates, and road closures issued during a hurricane.
+*   **🗺️ Evacuation Routes:** I can help you find turn-by-turn driving routes, estimated congestion travel times, and locate the nearest emergency shelters.
+*   **🛡️ Disaster Safety & Survival:** I can offer authoritative checklists for hurricane preparedness and survival, first aid tips, and emergency hotlines.
+*   **🔄 Sequential Validation & Refinement:** For complex requests, I use a rigorous multi-agent pipeline to ensure the accuracy of life-safety information before delivering it to you.
+[2026-10-14 09:50:39] [USER]    (Agent: root_agent | Session: session_unknown | Priority: URGENT) -> What is ReadyNow and what can you help me with during a hurricane?
+[2026-10-14 09:50:43] [MODEL]   (Agent: root_agent | Session: session_unknown) -> I am the ReadyNow Root Disaster Response & Safety Coordinator Agent. I can help you get real-time updates during a disaster, including during a hurricane.
+
+Here's what I can do:
+
+*   **🌤️ Weather Forecasting & Hazard Alerts**: I can transfer you to my weather agent who can provide real-time storm tracks, temperatures, winds, and National Weather Service warnings related to the hurricane.
+*   **🌐 Internet Search**: I can transfer you to my search agent who can find breaking emergency declarations, official mandates, and road closures issued during the hurricane.
+*   **🗺️ Evacuation Routes**: I can transfer you to my routes agent who can provide turn-by-turn driving routes, estimated congestion travel times, and locate the nearest emergency shelters.
+*   **🛡️ Disaster Safety & Survival**: I can transfer you to my safety agent who can offer authoritative checklists specifically for hurricanes, as well as general survival procedures, first aid tips, and emergency hotlines.
+*   **🔄 Sequential Validation & Refinement**: For complex or multi-step emergency requests where you provide your situation and location, I can route your request through a rigorous multi-agent pipeline to ensure accuracy and provide a comprehensive response.
+
+If you have an immediate life-or-death crisis, please call 911 immediately.
+[2026-10-14 09:58:36] [USER]    (Agent: root_agent | Session: unit_test_session_999 | Priority: URGENT) -> Test user inquiry
+[2026-10-14 09:58:36] [MODEL]   (Agent: weather_agent | Session: unit_test_session_999) -> Test model response
+[2026-10-14 09:58:36] [TOOL]    (Agent: routes_agent | Session: unit_test_session_999) Invoked 'get_evacuation_route' with {'origin': 'A', 'destination': 'B'}
+[2026-10-14 10:05:00] [USER]    (Agent: direct_demo | Session: direct_demo_session | Priority: STANDARD) -> real-time weather and hazards in Norco ca
+[2026-10-14 10:05:49] [USER]    (Agent: direct_demo | Session: direct_demo_session | Priority: URGENT) -> Hurricane approaching San Diago, where do I evacuate?

@@ -252,6 +252,7 @@ def deploy_agent(app) -> object:
         display_name=AGENT_DISPLAY_NAME,
         description=AGENT_DESCRIPTION,
         requirements=DEPLOYMENT_REQUIREMENTS,
+        extra_packages=["readynow"],
     )
 
     _ok("Deployment finished successfully!")
@@ -265,8 +266,8 @@ def deploy_agent(app) -> object:
 async def test_remote_session(remote_agent) -> None:
     """Verifies that the deployed Agent Engine resource responds to remote queries."""
     _step(6, "Testing Remote Session on Vertex AI")
-    user_id = "cloud_verification_user"
-    session_id = "cloud_verification_session"
+    user_id = "cloud-verification-user"
+    session_id = "cloud-verification-session"
 
     try:
         remote_session = await remote_agent.async_create_session(
@@ -320,14 +321,27 @@ async def main_async() -> None:
     # Deploy
     remote_agent = deploy_agent(app)
 
-    # Save resource name to .env
+    # Save resource name to deployed_agent_resource.txt and .env
+    resource_file = os.path.join(os.path.dirname(__file__), "deployed_agent_resource.txt")
+    with open(resource_file, "w", encoding="utf-8") as f:
+        f.write(remote_agent.resource_name)
+    _ok(f"Saved resource name to {resource_file}")
+
     env_path = os.path.join(os.path.dirname(__file__), ".env")
     try:
-        with open(env_path, "a", encoding="utf-8") as f:
-            f.write(f"\nVERTEX_AGENT_RESOURCE={remote_agent.resource_name}\n")
-        _ok(f"Saved VERTEX_AGENT_RESOURCE to {env_path}")
+        with open(env_path, "r", encoding="utf-8") as f:
+            env_content = f.read()
+        if "VERTEX_AGENT_RESOURCE=" in env_content:
+            import re
+            env_content = re.sub(r"VERTEX_AGENT_RESOURCE=.*", f"VERTEX_AGENT_RESOURCE={remote_agent.resource_name}", env_content)
+            with open(env_path, "w", encoding="utf-8") as f:
+                f.write(env_content)
+        else:
+            with open(env_path, "a", encoding="utf-8") as f:
+                f.write(f"\nVERTEX_AGENT_RESOURCE={remote_agent.resource_name}\n")
+        _ok(f"Updated VERTEX_AGENT_RESOURCE in {env_path}")
     except Exception as e:
-        _warn(f"Could not append to .env: {e}")
+        _warn(f"Could not update .env: {e}")
 
     # Verify remote operation
     await test_remote_session(remote_agent)
